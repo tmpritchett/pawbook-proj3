@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-import dalmation from '../../public/images/dalmation.jpg'
+import dalmation from '../images/dalmation.jpg'
 
 const HomePage = styled.div`
 margin: 0;
@@ -28,7 +28,7 @@ class LandingPage extends Component {
         
         return (
             <HomePage>
-             <Link to="/"><Image src={dalmation} alt="dalmation"/></Link>
+            <Link to="/"><Image src={dalmation} alt="dalmation"/></Link>
             </HomePage>
         )
     }
@@ -36,3 +36,4 @@ class LandingPage extends Component {
 }
 
 export default LandingPage
+
