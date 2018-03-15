@@ -17,17 +17,26 @@ db.on('error', (err) => {
 })
 
 // Setting up all of our test data
-const stanP = new Coach({
-  name: 'Stanley J Pritchett Jr',
-  positionTitle: 'Head Coach',
-  yearsExperience: 7,
-  stats: 'pppp'
+const yodaJedi = new User({
+  name: 'Yoda Jedi I Am',
+  petsName: 'Pokeman',
+  emailAddress: 'yoda@iamajedi.com', 
+  password: 'Loveis'
 })
-const falcons = new Team({
-    name: 'Falcons',
-    location: 'Atlanta, GA',
-    coaches: [stanP]
+const userYoda= new profilePage({
+    name: 'Yoda Jedi I Am',
+    description:'Welcome to my PawBook page!',
+    link_to_image: 'https://i.imgur.com/NAZIYcv.jpg',
+    users: [yodaJedi]
 })
+const myPortraitView = new profilePAge ({
+    petsname: 'Pokeman',
+    description: 'Memories are Made Here',
+    portraitpackage1: 'One Look: $125, 40 Minute Session, Online Gallery Access, USB Upgrade for $75 ',
+    portraitpackage2: 'Two Looks: $225, 80 Minute Session, Online Gallery Access, USB Upgrade for $100 ',
+    portraitpackage3: 'Three Looks: $325, 120 Minute Session, Online Gallery Access, USB Upgrade for $125 ',
+})
+
 
 // const pepsiCola = new Soda({
 //   name: 'Pepsi',

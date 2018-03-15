@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const portraitPageSchema = new Schema({
-  name: String,
+  petsname: String,
   description: String,
   portraitPackage1: String,
   portraitPackage2: String,
