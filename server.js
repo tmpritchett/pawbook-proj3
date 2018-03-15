@@ -16,6 +16,7 @@ connection.on('error', (err) => {
 
 })
 app.use(bodyParser.json());
+app.use('/api/user', userController)
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })

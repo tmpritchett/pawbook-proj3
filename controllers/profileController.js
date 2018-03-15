@@ -60,7 +60,7 @@ router.delete('/:profileId/delete', (req, res) => {
             res.json(user)
         })
         .catch(err => {
-            console.log('did notdelete')
+            console.log('did not delete')
         })
 })
 
