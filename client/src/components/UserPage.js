@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import style from 'styled-components'
 import axios from 'axios'
-import LandingPage from './components/LandingPage'
+import LandingPage from './LandingPage'
+
+
 
 class UserPage extends Component {
     render() {

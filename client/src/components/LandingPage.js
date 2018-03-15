@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-import dalmation from '../images/dalmation.jpg'
+import dalmation from '../../public/images/dalmation.jpg'
 
 const HomePage = styled.div`
 margin: 0;
