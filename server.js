@@ -15,6 +15,7 @@ connection.on('error', (err) => {
     console.log('Mongoose default connection error: ' + err);
 
 })
+const userController = require('./controllers/userController')
 app.use(bodyParser.json());
 app.use('/api/user', userController)
 app.get('/', (req, res) => {

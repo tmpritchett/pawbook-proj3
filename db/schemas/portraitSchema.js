@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const portraitPageSchema = new Schema({
+const portraitSchema = new Schema({
   petsname: String,
   description: String,
   portraitPackage1: String,
@@ -10,4 +10,4 @@ const portraitPageSchema = new Schema({
 })
   
 
-module.exports = profilePageSchema
+module.exports = portraitSchema

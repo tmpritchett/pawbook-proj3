@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
     const newPortrait= req.body
     User.findById(userId)
         .then((user) => {
-            user.portrait.push(newProfile)
+            user.portrait.push(newPortrait)
             return user.save()
         })
         .then((user) => {
@@ -59,4 +59,3 @@ router.delete('/:portraitId/delete', (req, res) => {
 
  module.exports = router
 
- 
