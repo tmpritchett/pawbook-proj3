@@ -1,39 +1,44 @@
-// import React, {Component} from 'react';
-// import styled from 'styled-components'
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import styled from 'styled-components'
+import ProfilePage from './ProfilePage'
 
-// export const UserName = styled.p `
-//     text-align:center;
-//     font-size: 12px;
-// `
+export default class User extends Component {
+    state = {
+      name: ''
+    }
+  
+    handleChange = (event) => {
+      const newState = {
+        ...this.state
+      }
+      newState[event.target.name] = event.target.value
+      this.setState(newState)
+    }
+  
+    saveNewUser = (event) => {
+      event.preventDefault()
+      this.state.createNewUser
+      this.setState({name: ''})
+    }
+  
+    render() {
+      return (<div>
+        <h1>Join PAWBOOK!!</h1>
+        <form onSubmit={this.saveNewUser}>
+  
+          <label htmlFor="name">User Name</label>
+  
+          <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
+  
+          <button type="Link">
+            <Link to="/ProfilePage" className="PAWBOOK Profile">Sign In!
+            </Link>
+          </button>
+        </form>
+      </div>)
+    }
+  }
 
-// export const UserBox = styled.div `
-//     margin: 0px;
-//     padding: 0px;
-//     display:flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin: 10px;
-//     height: 12vh;
-//     width: 12vh;
-//     background: black;
-//     overflow: hidden;
-//     border-radius: 10%;
-//     &:hover{
-//         background: gray;
-//     }
-// `
+ 
 
-// class User extends Component {
-//     render() {
-
-//         return (
-            
-//                 <UserBox>
-//                     <UserName>{this.props.name}</UserName>
-//                 </UserBox>
-           
-//         );
-//     }
-// }
-
-// export default User;

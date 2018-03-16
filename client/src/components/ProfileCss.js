@@ -8,11 +8,12 @@ text-align: justify;
 
 `
 const Image = styled.img`
-height: auto;
+height: 100%;
 background-repeat: no-repeat;
-background-size: 50%;
+background-size: 20%;
 background-position: center;
 background-color: #56595C;
+
 
 `
 class ProfileCss extends Component {
