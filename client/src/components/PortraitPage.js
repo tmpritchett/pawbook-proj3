@@ -4,7 +4,7 @@ class PortraitPage extends Component {
     render() {
         return (
             <div>
-                <h1> Portrait Page </h1>
+                <h1> Portraits </h1>
             </div>
         );
     }

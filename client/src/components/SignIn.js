@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
-class ProfilePage extends Component {
+class SignIn extends Component {
     render() {
         return (
             <div>
-                <h1>Welcome to PAWBOOK </h1>
+               <h1> Sign In </h1> 
             </div>
         );
     }
 }
 
-export default ProfilePage;
-
+export default SignIn;
