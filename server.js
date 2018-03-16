@@ -19,12 +19,12 @@ connection.on('error', (err) => {
 
 })
 const userController = require('./controllers/userController')
-const profileController = require('./controller/profileController')
-const portraitController = require('./controller/portraitController')
+const petController = require('./controllers/petController')
+//const portraitController = require('./controller/portraitController')
 
 app.use('/api/user', userController)
-app.use('/api/profile', profileController)
-app.use('/api/portrait', portraitController)
+app.use('/api/user/:userId/pet', petController)
+//app.use('/api/portrait', portraitController)
 
 app.use(logger('dev'))
 app.use(bodyParser.json());

@@ -5,6 +5,8 @@ import UserPage from './components/UserPage'
 import ProfilePage from './components/ProfilePage'
 import PortraitPage from './components/PortraitPage'
 import SignIn from './components/SignIn'
+import ProfileCss from './components/ProfileCss'
+import NavBar from './components/NavBar'
 import './App.css';
 
 
@@ -14,18 +16,13 @@ class App extends Component {
     return (
       <Router>
         <div>
-            <div>
-            <Link to='/signin'>Sign in</Link>
-            </div>
-            <div>
-            <Link to ='/profile'>Profile</Link>
-            </div>
-
+            
+<NavBar />
           <Switch>
             <Route exact path="/" component={UserPage} />
-            <Route path="/profile" component={ProfilePage} />
-            <Route path="/portrait" component={PortraitPage} />
-            <Route path= "/signin" component={SignIn} />
+            <Route path="/profilepage" component={ProfilePage} />
+            <Route path="/portraitpage" component={PortraitPage} />
+            <Route path= "/signinpage" component={SignIn} />
           </Switch>
 
         </div>

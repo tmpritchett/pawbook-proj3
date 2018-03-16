@@ -2,21 +2,21 @@ const express = require('express')
 const router = express.Router({ mergeParams: true })
 
 const User = require('../models/user')
-const Profile = require('../models/profile')
-const Portrait = require('../models/portrait')
+const Pet = require('../models/pet')
+const Package = require('../models/package')
 
 // POST/CREATE
 router.post('/', (req, res) => {
     const userId = req.params.userId
-    const newPortrait= req.body
+    const newPackage= req.body
     User.findById(userId)
         .then((user) => {
-            user.portrait.push(newPortrait)
+            user.package.push(newPackage)
             return user.save()
         })
         .then((user) => {
-            console.log(newPortrait)
-            res.json(newPortrait)
+            console.log(newPackage)
+            res.json(newPackage)
         })
         .catch(err => {
             console.log(`did not save`)
@@ -24,12 +24,12 @@ router.post('/', (req, res) => {
         })
 })
 // READ
-router.get('/:portraitId', (req, res) => {
-    const portraitId = req.params.portraitId
+router.get('/:packageId', (req, res) => {
+    const packageId = req.params.packageId
     const userId = req.params.userId
     User.findById(userId).then(user => {
-        const portrait = user.portrait.id(portraitId)
-        res.json(profile)
+        const package = user.package.id(packageId)
+        res.json(pet)
     })
         .catch(err => {
             console.log(err)
@@ -38,14 +38,14 @@ router.get('/:portraitId', (req, res) => {
 })
 
 // DELETE
-router.delete('/:portraitId/delete', (req, res) => {
+router.delete('/:packageId/delete', (req, res) => {
     const userId = req.params.userId
-    const portraitId = req.params.portraitId
+    const paackageId = req.params.packageId
 
     User.findById(userId)
         .then(user => {
-            user.portrait.id(portraitId).remove()
-            console.log('deleted portrait')
+            user.package.id(packageId).remove()
+            console.log('deleted package')
             return user.save()
         })
         .then((user) => {

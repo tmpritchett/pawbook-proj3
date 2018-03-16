@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
+const petSchema = require('./petSchema')
 const userSchema = new Schema({
   name: String,
-  petsName: String,
+  pets: [petSchema],
   emailAddress: String,
   password: String
 })
 
-module.exports = userSchema
+module.exports = {userSchema}
 

@@ -3,9 +3,9 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 
 
-const Portrait = require('../models/portrait')
-const Profile = require('../models/profile')
-const User = require('../models/user')
+const {Package} = require('../models/package')
+const {Pet} = require('../models/pet')
+const {User} = require('../models/user')
 
 mongoose.connect(process.env.MONGODB_URI)
 const db = mongoose.connection
@@ -16,26 +16,41 @@ db.on('error', (err) => {
   console.log(err)
 })
 
+
 // Setting up all of our test data
+const package1 = new Package({
+  price: 125,
+  time: 40,
+  special: 'Add USB'
+})
+const pokemanPet = new Pet({
+  name: 'Pokeman',
+  breed: 'German Shepard',
+  weight: 120,
+  allergies: 'pollen, eggs',
+  temperament: 'lazy',
+  packages: [package1]
+
+})
 const yodaJedi = new User({
   name: 'Yoda Jedi I Am',
-  petsName: 'Pokeman',
+  pets: [pokemanPet],
   emailAddress: 'yoda@iamajedi.com', 
   password: 'Loveis'
 })
-const userYoda= new profilePage({
-    name: 'Yoda Jedi I Am',
-    description:'Welcome to my PawBook page!',
-    link_to_image: 'https://i.imgur.com/NAZIYcv.jpg',
-    users: [yodaJedi]
-})
-const myPortraitView = new profilePAge ({
-    petsname: 'Pokeman',
-    description: 'Memories are Made Here',
-    portraitpackage1: 'One Look: $125, 40 Minute Session, Online Gallery Access, USB Upgrade for $75 ',
-    portraitpackage2: 'Two Looks: $225, 80 Minute Session, Online Gallery Access, USB Upgrade for $100 ',
-    portraitpackage3: 'Three Looks: $325, 120 Minute Session, Online Gallery Access, USB Upgrade for $125 ',
-})
+// const userYoda= new profilePage({
+//     name: 'Yoda Jedi I Am',
+//     description:'Welcome to my PawBook page!',
+//     link_to_image: 'https://i.imgur.com/NAZIYcv.jpg',
+//     users: [yodaJedi]
+// })
+// const myPortraitView = new profilePage ({
+//     petsname: 'Pokeman',
+//     description: 'Memories are Made Here',
+//     portraitpackage1: 'One Look: $125, 40 Minute Session, Online Gallery Access, USB Upgrade for $75 ',
+//     portraitpackage2: 'Two Looks: $225, 80 Minute Session, Online Gallery Access, USB Upgrade for $100 ',
+//     portraitpackage3: 'Three Looks: $325, 120 Minute Session, Online Gallery Access, USB Upgrade for $125 ',
+// })
 
 
 // const pepsiCola = new Soda({
@@ -68,15 +83,12 @@ const myPortraitView = new profilePAge ({
 // })
 
 // remove all Sodas
-Coach.remove().then(() => {
+User.remove().then(() => {
 
   // THEN remove all Companies
-  return Team.remove()
+  return yodaJedi.save()
 }).then(() => {
-
   // THEN save multiple companies to the database
-  return falcons.save()
-}).then(() => {
 
   // THEN close the database
   console.log('Saved Successfully')

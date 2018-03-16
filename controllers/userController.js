@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router({ mergeParams: true })
 
-const User = require('../models/user')
-const Profile = require('../models/profile')
-const Portrait = require('../models/portrait')
+const {User} = require('../models/user')
+// const Profile = require('../models/profile')
+// const Portrait = require('../models/portrait')
 
 // READ
 router.get('/', (req, res) => {

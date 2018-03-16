@@ -19,9 +19,8 @@ class LandingPage extends Component {
     render() {
         
         return (
-            <HomePage>
-            <Link to="/"><Image src={dalmation} alt="dalmation"/></Link>
-            </HomePage>
+           <div>
+               </div>
         )
     }
 
