@@ -24,7 +24,7 @@ class App extends Component {
             <Route path="/profilepage" component={ProfilePage} />
             <Route path="/portraitpage" component={PortraitPage} />
             <Route path= "/signinpage" component={SignIn} />
-            <Route path="/userprofile" component={UserProfile} />
+            <Route path="/user/:userId" component={UserProfile} />
           </Switch>
 
         </div>

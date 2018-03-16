@@ -16,16 +16,25 @@ const DogBackground = styled.div`
     background-position: center center;
     background-size: cover;
 `
+
+const Container = styled.div`
+display:flex;
+flex-direction: column;
+height: 100% ;
+justify-content: space-between;
+
+
+`
 class UserPage extends Component {
     render() {
         return (
             
             
             <DogBackground>
-            <div>
+            <Container>
                 <LandingPage />
                 <Header />
-           </div>
+           </Container>
            </DogBackground>
         );
     }

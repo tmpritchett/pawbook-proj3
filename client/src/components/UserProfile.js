@@ -6,10 +6,13 @@ import yodaPic from '../images/yoda.jpg'
 
 
 const ProfilePic = styled.div`
-img:url(${yodaPic});
-width: 25vw;
-height: 25vh;
-`
+width: 100vw;
+    height: 100vh;
+    background-image: url(${yodaPic});
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    `
 
 
 
