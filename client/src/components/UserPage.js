@@ -24,7 +24,6 @@ class UserPage extends Component {
             <DogBackground>
             <div>
                 <LandingPage />
-                {/* <LogIn /> */}
                 <Header />
            </div>
            </DogBackground>

@@ -7,6 +7,7 @@ import PortraitPage from './components/PortraitPage'
 import SignIn from './components/SignIn'
 import ProfileCss from './components/ProfileCss'
 import NavBar from './components/NavBar'
+import UserProfile from './components/UserProfile'
 import './App.css';
 
 
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/profilepage" component={ProfilePage} />
             <Route path="/portraitpage" component={PortraitPage} />
             <Route path= "/signinpage" component={SignIn} />
+            <Route path="/userprofile" component={UserProfile} />
           </Switch>
 
         </div>

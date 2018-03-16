@@ -21,10 +21,11 @@ class ProfilePage extends Component {
     state ={
         users: []
     }
-
+    componentDidMount() {
+        this.getAllUsers()
+    }
     getAllUsers = () => {
-
-        axios.get ('/api/users').then(res => {
+    axios.get ('/api/user').then(res => {
             this.setState ({users: res.data})
         })
     }
@@ -37,8 +38,8 @@ class ProfilePage extends Component {
             </div>
             <div>
             <h3> Please Select A User</h3>
-            {this.state.users.map(user=> {
-                return (<Link to={`/user/${user._id}`} > {user.userName}</Link>)
+            {this.state.users.map((user)=> {
+                return (<Link to={`/user/${user._id}`} > {user.name}</Link>)
             })}
             </div>
 
